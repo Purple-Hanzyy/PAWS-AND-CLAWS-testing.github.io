@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAWS & CLAWS - Contact Us</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+     <!--Navigation Section -->
+    <nav>
+        <div class="logo">PAWS & CLAWS</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#adopt">Adopt</a>
+                <ul class="dropdown">
+                    <li><a href="final adopt dog.html">Dog</a></li>
+                    <li><a href="final adopt cat.html">Cat</a></li>
+                </ul>
+            </li>
+            <li><a href="final donate.html">Donate</a></li>
+            <li><a href="final tips.html">Tips</a></li>
+            <li><a href="final contact.html">Contact</a></li>
+            <li><a href="login final.html">Log In/Register</a></li>
+        </ul>
+    </nav>
+
+     <!--Contact Us section-->
+     <div class ="ContactUs"></div>
+    <div class="containerheader">
+        <h1 class="contact-header">Contact Us</h1>
+
+         <!--Message form Section -->
+        <div class="contact-section">
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Num">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+
+             <!--Message Box Section -->
+            <div class="message-box">
+                <p>In your left you can leave a message where you want to express about things or you can clear your queries. Which pet You want to adopt Then we will contact you as soon as possible</p>
+            </div>
+        </div>
+
+         <!--Information Box Section -->
+        <div class="contact-grid">
+            <div class="info-box">
+                <h3>Phone Number:</h3>
+                <p>57162734</p>
+                <p>Telephone Num: 6378823</p>
+            </div>
+            <div class="info-box">
+                <h3>Email Address:</h3>
+                <p>Paws&Claws@gmail.com</p>
+            </div>
+            <div class="info-box">
+                <h3>Location:</h3>
+                <p>WayGan, Mauritius</p>
+            </div>
+        </div>
+
+         <!--Application Section -->
+        <form id="applicationForm" class="application-form">
+            <h2>Application Form</h2>
+            
+            <div class="form-group">
+                <label>NIC Number:</label>
+                <input type="text" id="nic" name="nic" required>
+                <div class="validation-message" id="nicError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+                <div class="validation-message" id="firstNameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Surname:</label>
+                <input type="text" id="surname" name="surname" required>
+                <div class="validation-message" id="surnameError"></div>
+            </div>
+
+            <div class="radio-group">
+                <label>Gender:</label>
+                <input type="radio" name="gender" id="male" required>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="female">
+                <label for="female">Female</label>
+                <div class="validation-message" id="genderError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" id="email" name="email" required>
+                <div class="validation-message" id="emailError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="validation-message" id="phoneError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Username:</label>
+                <input type="text" id="username" name="username" required>
+                <div class="validation-message" id="usernameError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="password" name="password" required>
+                <div class="validation-message" id="passwordError"></div>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div class="validation-message" id="confirmPasswordError"></div>
+            </div>
+
+            <div class="radio-group">
+                <label>Do you want to adopt a pet?</label>
+                <input type="radio" name="adopt" id="yes" required>
+                <label for="yes">Yes</label>
+                <input type="radio" name="adopt" id="no">
+                <label for="no">No</label>
+                <div class="validation-message" id="adoptError"></div>
+            </div>
+
+            <div id="petDetails" style="display: none;">
+                <div class="radio-group">
+                    <label>Which pet do you want to adopt?</label>
+                    <input type="radio" name="pet-type" id="dog">
+                    <label for="dog">Dog</label>
+                    <input type="radio" name="pet-type" id="cat">
+                    <label for="cat">Cat</label>
+                    <input type="radio" name="pet-type" id="both">
+                    <label for="both">Both</label>
+                    <div class="validation-message" id="petTypeError"></div>
+                </div>
+        
+                <div id="dogSection" style="display: none;">
+                    <div class="form-group">
+                        <label>Dog Name:</label>
+                        <select id="dogName" name="dogName">
+                            <option value="">Select Dog Name</option>
+                            <option value="Roxy">Roxy</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Nova">Nova</option>
+                            <option value="Daisy">Daisy</option>
+                            <option value="Snoppy">Snoppy</option>
+                            <option value="Athela">Athela</option>
+                            <option value="Milou">Milou</option>
+                        </select>
+                        <div class="validation-message" id="dogNameError"></div>
+                    </div>
+                </div>
+        
+                <div id="catSection" style="display: none;">
+                    <div class="form-group">
+                        <label>Cat Name:</label>
+                        <select id="catName" name="catName">
+                            <option value="">Select Cat Name</option>
+                            <option value="Luna">Luna</option>
+                            <option value="Oliver">Oliver</option>
+                            <option value="Milo">Dilo</option>
+                            <option value="Minen">Minen</option>
+                            <option value="Shadow">Shadow</option>
+                            <option value="Minous">Minous</option>
+                            <option value="Ginger">Ginger</option>
+                        </select>
+                        <div class="validation-message" id="catNameError"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Age of Pet:</label>
+                <select id="ageType" name="ageType">
+                    <option value="years">Years</option>
+                    <option value="months">Months</option>
+                </select>
+                <input type="number" id="petAge" name="petAge" min="0">
+                <div class="validation-message" id="petAgeError"></div>
+            </div>
+            
+            <div class="form-actions">
+                <button type="button" class="reset-btn" id="resetBtn">Reset</button>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+            <p class="note">Note: Thank You for your application. We will contact you as soon as possible to confirm your adoption.</p>
+    </div>
+
+     <!-- Javscript and JQuery Section -->
+    <script>
+        // Function to show error message and focus on field
+    function showError(fieldId, message) {
+        $(`#${fieldId}`).addClass('error-field');
+        $(`#${fieldId}Error`).text(message).show().addClass('error');
+        $(`#${fieldId}`).focus();
+        return false;
+    }
+
+    // Function to clear error message
+    function clearError(fieldId) {
+        $(`#${fieldId}`).removeClass('error-field');
+        $(`#${fieldId}Error`).hide().text('');
+        return true;
+    }
+
+    // NIC validation function (existing)
+    function validateNIC(nic) {
+        if (!/^[A-Za-z]\d{10}$/.test(nic)) {
+            return showError('nic', 'NIC must start with a letter and contain 10 numbers');
+        }
+        return clearError('nic');
+    }
+
+    // Validate first name and surname (only letters and spaces)
+    function validateName(fieldId, fieldName) {
+        const value = $('#' + {fieldId}).val().trim();
+        if (value === '') {
+            return showError(fieldId, `${fieldName} cannot be empty`);
+        }
+        if (!/^[A-Za-z\s]+$/.test(value)) {
+            return showError(fieldId, `${fieldName} should contain only letters and spaces`);
+        }
+        if (value.length < 2) {
+            return showError(fieldId, `${fieldName} must be at least 2 characters long`);
+        }
+        return clearError(fieldId);
+    }
+
+    // Validate phone number (exactly 7 digits, Mauritian format)
+    function validatePhone(phone) {
+        const cleanPhone = phone.replace(/\s+/g, '');
+        if (!/^\d{7}$/.test(cleanPhone)) {
+            return showError('phone', 'Phone number must be exactly 7 digits');
+        }
+        return clearError('phone');
+    }
+
+    // Validate email (more comprehensive regex)
+    function validateEmail(email) {
+        const trimmedEmail = email.trim();
+        if (trimmedEmail === '') {
+            return showError('email', 'Email cannot be empty');
+        }
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailRegex.test(trimmedEmail)) {
+            return showError('email', 'Please enter a valid email address');
+        }
+        return clearError('email');
+    }
+
+    // Validate username (complex rules)
+    function validateUsername(username, nic) {
+        const trimmedUsername = username.trim();
+        if (trimmedUsername === '') {
+            return showError('username', 'Username cannot be empty');
+        }
+        // Must be at least 8 characters
+        if (trimmedUsername.length < 8) {
+            return showError('username', 'Username must be at least 8 characters long');
+        }
+        // Must include first 6 characters of NIC (DOB)
+        const nicDob = nic.substring(1, 7);
+        if (!trimmedUsername.includes(nicDob)) {
+            return showError('username', `Username must include your date of birth (${nicDob}) from NIC`);
+        }
+        // Can contain letters, numbers, and underscores
+        if (!/^[a-zA-Z0-9_]+$/.test(trimmedUsername)) {
+            return showError('username', 'Username can only contain letters, numbers, and underscores');
+        }
+        return clearError('username');
+    }
+
+    // Validate password strength
+    function validatePassword(password) {
+        if (password === '') {
+            return showError('password', 'Password cannot be empty');
+        }
+        if (password.length < 8) {
+            return showError('password', 'Password must be at least 8 characters long');
+        }
+        if (!/[A-Z]/.test(password)) {
+            return showError('password', 'Password must contain at least one uppercase letter');
+        }
+        if (!/[a-z]/.test(password)) {
+            return showError('password', 'Password must contain at least one lowercase letter');
+        }
+        if (!/[0-9]/.test(password)) {
+            return showError('password', 'Password must contain at least one number');
+        }
+        if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) {
+            return showError('password', 'Password must contain at least one special character');
+        }
+        return clearError('password');
+    }
+
+    // Validate passwords match
+    function validatePasswords() {
+        const password = $('#password').val();
+        const confirmPassword = $('#confirmPassword').val();
+        if (password !== confirmPassword) {
+            return showError('confirmPassword', 'Passwords do not match');
+        }
+        return clearError('confirmPassword');
+    }
+
+    // Real-time validation on blur
+    $('#nic').blur(function() { validateNIC($(this).val()); });
+    $('#firstName').blur(function() { validateName('firstName', 'First Name'); });
+    $('#surname').blur(function() { validateName('surname', 'Surname'); });
+    $('#email').blur(function() { validateEmail($(this).val()); });
+    $('#phone').blur(function() { validatePhone($(this).val()); });
+    $('#username').blur(function() { validateUsername($(this).val(), $('#nic').val()); });
+    $('#password').blur(function() { validatePassword($(this).val()); });
+    $('#confirmPassword').blur(validatePasswords);
+
+    // Form submission validation
+    $('#applicationForm').submit(function(e) {
+        e.preventDefault();
+        
+        const isValid = 
+            validateNIC($('#nic').val()) &&
+            validateName('firstName', 'First Name') &&
+            validateName('surname', 'Surname') &&
+            validateEmail($('#email').val()) &&
+            validatePhone($('#phone').val()) &&
+            validateUsername($('#username').val(), $('#nic').val()) &&
+            validatePassword($('#password').val()) &&
+            validatePasswords();
+
+        if (isValid) {
+            alert('Form submitted successfully! We will contact you soon.');
+            $('#resetBtn').click();
+        }
+    });
+
+    $('#petDetails').html(`
+    <div class="radio-group">
+        <label>Which pet do you want to adopt?</label>
+        <input type="radio" name="pet-type" id="dog">
+        <label for="dog">Dog</label>
+        <input type="radio" name="pet-type" id="cat">
+        <label for="cat">Cat</label>
+        <input type="radio" name="pet-type" id="both">
+        <label for="both">Both</label>
+        <div class="validation-message" id="petTypeError"></div>
+    </div>
+
+    <div id="dogSection" style="display: none;">
+        <div class="form-group">
+            <label>Dog Name:</label>
+            <select id="dogName" name="dogName">
+                <option value="">Select Dog Name</option>
+                <option value="Roxy">Roxy</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Nova">Nova</option>
+                <option value="Daisy">Daisy</option>
+                <option value="Snoppy">Snoppy</option>
+                <option value="Athela">Athela</option>
+                <option value="Milou">Milou</option>
+            </select>
+            <div class="validation-message" id="dogNameError"></div>
+        </div>
+    </div>
+
+    <div id="catSection" style="display: none;">
+        <div class="form-group">
+            <label>Cat Name:</label>
+            <select id="catName" name="catName">
+                <option value="">Select Cat Name</option>
+                <option value="Luna">Luna</option>
+                <option value="Oliver">Oliver</option>
+                <option value="Milo">Dilo</option>
+                <option value="Minen">Minen</option>
+                <option value="Shadow">Shadow</option>
+                <option value="Minous">Minous</option>
+                <option value="Ginger">Ginger</option>
+            </select>
+            <div class="validation-message" id="catNameError"></div>
+        </div>
+    </div>
+`);
+// Handle radio button for pet type
+$('input[name="pet-type"]').change(function() {
+            $('#dogSection, #catSection').hide();
+            
+            if($('#dog').is(':checked')) {
+                $('#dogSection').slideDown();
+            } else if($('#cat').is(':checked')) {
+                $('#catSection').slideDown();
+            } else if($('#both').is(':checked')) {
+                $('#dogSection, #catSection').slideDown();
+            }
+        });
+
+        // Validate pet name selection
+        function validatePetNames() {
+            if($('#yes').is(':checked')) {
+                const petType = $('input[name="pet-type"]:checked').val();
+                
+                if(!$('input[name="pet-type"]:checked').length) {
+                    return showError('petType', 'Please select a pet type');
+                }
+                
+                if(petType === 'dog' || petType === 'both') {
+                    const dogName = $('#dogName').val();
+                    if(!dogName) {
+                        return showError('dogName', 'Please select a dog name');
+                    }
+                }
+                
+                if(petType === 'cat' || petType === 'both') {
+                    const catName = $('#catName').val();
+                    if(!catName) {
+                        return showError('catName', 'Please select a cat name');
+                    }
+                }
+            }
+            return true;
+        }
+
+        // Validate pet details
+        function validatePetDetails() {
+            if($('#yes').is(':checked')) {
+                if(!$('input[name="pet-type"]:checked').length) {
+                    return showError('petType', 'Please select a pet type');
+                }
+
+                return validatePetNames();
+            }
+            return true;
+        }
+
+        // Add blur events for new dropdowns
+        $('#dogName').blur(validatePetNames);
+        $('#catName').blur(validatePetNames);
+
+
+        // Handle radio button for adoption
+        $('input[name="adopt"]').change(function() {
+            if($('#yes').is(':checked')) {
+                $('#petDetails').slideDown();
+            } else {
+                $('#petDetails').slideUp();
+            }
+        });
+
+        // Handle form reset
+        $('#resetBtn').click(function() {
+            $('#applicationForm')[0].reset();
+            $('#petDetails').hide();
+            $('#dogSection, #catSection').hide();
+            // Clear all error messages
+            $('.validation-message').hide().text('');
+            $('.error-field').removeClass('error-field');
+        });
+    
+
+
+
+
+    </script>
+</body>
+</html>

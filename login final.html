@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+
+        <meta charset = "utf-8">
+        <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href="styles.css">
+        <title> PAWS & CLAWS</title>
+
+  </head>
+  
+
+    <body class="login">
+        <!-- Log In/Registration -->
+        <div class="All" id="All">
+          <div class=" header" id = "headerForm"><h2>Login</h2></div>
+
+            <div class="form" id = "form1">
+              <form id = "log-in form">
+                <p>Log In</p>
+                <input type="text" id="Lname" placeholder="Enter Name" required>
+                <input type = "text" id = "email-login" placeholder="Email" required>
+                <input type = "password" id = "loginpassword" placeholder="Enter Password" required>
+                <button type = "submit">Login</button>
+              </form>
+            </div>
+
+            <div class="signup" id="form2">
+              <form id = "registrationform">
+                <p>Sign Up</p>
+                <input type="text" id = "Rname" placeholder="Enter Full Name" required>
+               
+                <input type = "text" id = "email" placeholder="Enter Email"required>
+               
+                <input type = "password" id="passwordReg" placeholder="Enter Password"required>
+               
+                <input type = "password" id="passwordcon" placeholder="Confirm Password" required>
+              
+                <button type="submit">Register</button>
+              </form>
+            </div>
+           <div class="toggle-container">
+              <div class="toggle">
+               <div class="toggle-panel toggle-left">
+                 <h1>Welcome back!</h1>
+                 <p>If you already have an account</p>
+                 <button class="hidden" id="login">Login</button>
+                </div>
+
+               <div class="toggle-panel toggle-right">
+                 <h1>Hello, User!</h1>
+                 <p>If you don't have an account</p>
+                 <button class="hidden" id="register">Register</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <script src="script.js"></script>
+    </body>
+
+</html>

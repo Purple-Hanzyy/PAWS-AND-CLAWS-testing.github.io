@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PAWS & CLAWS</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+       
+    </head>
+    <body class="quiz">
+        <nav>
+            <div class="logo">PAWS & CLAWS</div>
+            <ul class="nav-links">
+                <li><a href="final home.html">Home</a></li>
+                <li><a href="#adopt">Adopt</a>
+                    <ul class="dropdown">
+                        <li><a href="final adopt dog.html">Dog</a></li>
+                        <li><a href="final adopt cat.html">Cat</a></li>
+                    </ul>
+                </li>
+                <li><a href="final donate.html">Donate</a></li>
+                <li><a href="final tips.html">Tips</a></li>
+                <li><a href="final contact.html">Contact</a></li>
+                <li><a href="login final.html">Log In/Register</a></li>
+            </ul>
+        </nav>
+
+        <div class="quiz-wrapper">
+            <h1>PAWS&CLAWS Shelter Quiz</h1>
+            <p>Want to test your knowledge? this is the perfect place!</p>
+            
+            <div id="Q-container">
+                <!-- Questions will be displayed here -->
+            </div>
+
+            <div id="results">
+                <h2>Quiz Complete!</h2>
+                <div class="result">
+                    Your score: <span id="score"></span> out of 10
+                    <button id="retry">Try Again</button>
+                </div>
+            </div>
+
+            <div class="navigationbtn">
+                <button id="submit">Submit</button>
+            </div>
+        </div>
+
+        <script>
+        function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+let allQuestions = [
+            
+                {
+                    question: "What is the main purpose of an animal shelter?",
+                    options: ["Selling pets", "Organizing pet shows", "Providing temporary homes for stray animals", "Training wild animals"],
+                    answer: "Providing temporary homes for stray animals"
+                },
+                {question: " which of these animals are most commonly found in shelters?", options:["Lions and tigers", "Whales and Dolphins", "Dogs and cats", "Horses and cows"], answer: "Dogs and cats" },
+  {question: " What is pet adoption?", options:["Taking a pet from a shelter", "Training a wild animal", "Buying a pet from a breeder", "Keeping a pet temporarily"], answer: "Taking a pet from a shelter" },
+  {question: " How do animal shelters get funding?", options:["Donations from the public", "Fundraising events", "Government support", "All of the above"], answer: "All of the above" },
+  {question: " Why do animals end up in shelters?", options:["Owners unable to care for them","Strays without a home","Lost by owners","All of the above"], answer:"All of the above"},
+  {question: " What is the most important thing to do before adopting a pet?", options:["Check the shelter's location","Buy pet collar","Ensure you have enough time and resources","Decide on a pet name"], answer:"Ensure you have enough time and resources"},
+  {question: " How often should dogs be vaccinated?", options:["Weekly","Annually","Monthly","Never"], answer:"Annually"},
+  {question: " What is microchipping in pets?", options:["A GPS device for tracking","A way to train pets","A vaccination method","An identification implant for lost pets"], answer:"An identification implant for lost pets"},
+  {question: " Why is spaying or neutering a pet important?", options:["It makes pets live longer","It is a grooming technique","It prevents overpopulation","It improves pet intelligence"], answer:"It prevents overpopulation"},
+  {question: " What is a pet's primary source of hydration?", options:["Water","Milk","Pet food","Juice"], answer:"Water"},
+  {question: " What is the role of a volunteer at an animal shelter?", options:["Adopt pets","Sell pet food","Help with cleaning and caring for animals","Train wild animals"], answer:"Help with cleaning and caring of animals"},
+  {question: " What do shelters typically require before allowing adoptions?", options:["A home visit","Completion of adoptiong forms","Proof of ability to care for a pet","All of the above"], answer:" All of the above"},
+  {question: " Which of the following services might a shelter offer?", options:["Pet training","Low-cost vaccinations","Pet adoption events","All of the above"], answer:"All of the above"},
+  {question: " What is a no kill shelter?", options:["A shelter that does not accept pets","A shelter for wild animals","A shelter that does not euthanize animals","A temporary home for pets"], answer:" A shelter that does not euthanize animals"},
+  {question: " What is the term for finding a lost pet's owner?", options:["Reuniting","Microchipping","Rehoming"," Tagging"], answer:"Reuniting"},
+  {question: " Which breed of dog is known as the 'gentle giant'?", options:["Bulldog","Great Dane","Poodle","Chihuaha"], answer:"Great Dane"},
+  {question: " Which animal is most commonly used as a guide for the visually impaired?", options:["Cats","Dogs"," Rabbits"," Parrots"], answer:"Dogs"},
+  {question: " What is the average lifespan of a domestic cat?", options:["5-7 years","10-15 years","20-25 years","Over 30 years"], answer:"10-15 years"},
+  {question: " Which bird is often kept as a pet and known for its ability to mimic speech?", options:["Sparrow","Parrot","Pigeon","Crow"], answer:"Parrot"},
+  {question: " What is the fastest land animal?", options:[" Lion"," Cheetah","Horse","Greyhound"], answer:"Cheetah"},
+  {question: " Adopting a pet is cheaper than buying one?", options:["True","False"], answer:"True"},
+  {question: " Black cats are considered unlucky in some cultures?", options:["True","False"], answer:"True"},
+  {question: " All shelter animals are sick or aggressive?", options:[" True"," False"], answer:"False"},
+  {question: " It is okay to keep a dog chained for long hours?", options:["True","False"], answer:"False"},
+  {question: " Regular vet visits are necessary even if your pet looks healthy?", options:["True","False"], answer:"True"},
+  {question: " If you find a stray animal, you should?", options:["Take it home immediately","Leave it where it is","Contact a local animal shelter","Ignore it"], answer:"Contact a local animal shelter"},
+  {question: " What should you do if your pet gets lost?", options:["Search the neighbourhood","Post on social media","Notify local shelters","All of the above"], answer:"All of the above"},
+  {question: " If you cannot care for your pet anymore, you should?", options:["Release it into the wild","Give it to a shelter or responsible person","Ignore it","Sell it online"], answer:"Give it to a shelter or responsible person"},
+  {question: " Which is the best way to introduce a new pet to an existing one?", options:["Slowly and carefully in a neutral space","By leaving them alone together","Forcing interaction"," Ignoring the existing pet"], answer:"Slowly and carefully in a neutral space"},
+  {question: " If a shelter pet seems shy or scared, you should:", options:["Give it time to adjust","Force it to interact with you","Shout to assert dominance","Avoid it completely"], answer:"Give it time to adjust"},
+  {question: " Which animal is known as 'man's best friend'?", options:["Cat","Rabbit","Dog","Horse"], answer:"Dog"},
+  {question: " What is the most adopted pet in shelters?", options:["Fish","Cats","Birds","Dogs"], answer:"Dogs"},
+  {question: " How can you make a shelter pet feel comfortable in its new home?", options:["Give it time to explore","Provide a cozy bed","Be patient and gentle","All of the above"], answer:"All of the above"},
+  {question: " Which of these is NOT a benefit of adopting a shelter animal?", options:["Saving a life","Reducing pet overpopulation","Getting a trained companion","Breeding for profit"], answer:"Breeding for profit"},
+  {question: " What is the average cost of adopting a pet from a shelter?", options:["Free","Minimal fees for medical and maintenance costs","The same as buying from a breeder","No cost involved"], answer:"Minimal fees for medical and maintenance costs"},
+  {question: " What should you include in an emergency kit for pets?", options:["Food and water","Medical records","Leash and toys","All of the above"], answer:"All of the above"},
+  {question: " Which of these is a sign that a dog is healthy?", options:["Bright eyes","Shiny coat","Energetic behavior","All of the above"], answer:"All of the above"},
+  {question: " What is the name of a place where stray animals are protected?", options:["Kennel","Zoo","Animal Shelter","Sanctuary"], answer:"Animal Shelter"},
+  {question: " Why should you avoid feeding human food to pets?", options:["It's expensive","It might harm their teeth","Pets don't like human food","It's illegal"], answer:"It might harm their teeth"},
+  {question: " Which pets is known for its ability to climb trees?", options:["Cats","Fish","Rabbits","Dogs"], answer:"Cats"},
+ 
+];
+
+let questions = [];
+let answerinput = [];
+
+function initializeQuiz() {
+    // Select 10 random questions, ensuring no repeats from previous quiz
+    const availableQuestions = allQuestions.filter(q => !questions.includes(q));
+    questions = shuffleArray(availableQuestions).slice(0, 10);
+    answerinput = Array(questions.length).fill(null);
+    
+    const contain = document.getElementById("Q-container");
+    const navigationBtn = document.querySelector(".navigationbtn");
+    contain.innerHTML = "";
+
+    navigationBtn.style.display = "flex";
+    navigationBtn.style.justifyContent = "center";
+
+    questions.forEach((q, index) => {
+        const elementQ = document.createElement("div");
+        elementQ.className = "question";
+        elementQ.innerHTML = `<p>${index + 1}. ${q.question}</p>`;
+
+        q.options.forEach((option, optionnum) => {
+            const elementP = document.createElement("div");
+            elementP.className = "options";
+            elementP.innerHTML = `
+                <label>
+                    <input type="radio" name="question${index}" value="${optionnum}">
+                    ${option}
+                </label>`;
+            elementQ.appendChild(elementP);
+        });
+        contain.appendChild(elementQ);
+    });
+}
+
+function scorecalculate() {
+    let score = 0;
+    questions.forEach((q, index) => {
+        const selectedAnswer = answerinput[index];
+        if (selectedAnswer !== null && q.options[parseInt(selectedAnswer)] === q.answer) {
+            score++;
+        }
+    });
+    return score;
+}
+
+function answersaved() {
+    const inputs = document.querySelectorAll('#Q-container input[type="radio"]:checked');
+    inputs.forEach(input => {
+        const indexquest = parseInt(input.name.replace("question", ""));
+        const valueselect = input.value;
+        answerinput[indexquest] = valueselect;
+    });
+}
+
+document.getElementById("submit").addEventListener("click", () => {
+    answersaved();
+    const score = scorecalculate();
+    document.getElementById("score").textContent = score;
+    document.getElementById("Q-container").style.display = "none";
+    document.getElementById("results").style.display = "block";
+    document.querySelector(".navigationbtn").style.display = "none";
+});
+
+document.getElementById("retry").addEventListener("click", () => {
+    document.getElementById("results").style.display = "none";
+    document.getElementById("Q-container").style.display = "block";
+    document.querySelector(".navigationbtn").style.display = "block";
+    initializeQuiz();
+});
+
+// Initialize the quiz
+initializeQuiz();
+        </script>
+    </body>
+</html>
